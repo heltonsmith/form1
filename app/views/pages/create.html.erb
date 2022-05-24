@@ -1,2 +1,13 @@
 
-<h1><%= @notice %></h1>
+<% if @registro.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(@registro.errors.count, "error") %> para guardar:</h2>
+        <ul>
+            <% @registro.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% else %>
+    <h1>Registrado correctamente</h1>
+<% end %>

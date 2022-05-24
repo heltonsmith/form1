@@ -1,0 +1,28 @@
+
+<h1>dashboard</h1>
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">Navbar</a>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="email">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+
+<table class="table">
+    <thead>
+        <th>Email</th>
+        <th>Edad</th>
+        <th>Comment</th>
+        <th>Nombre</th>
+    </thead>
+
+    <% @usuarios.each do |user| %>
+        <tr>
+            <td><%= user.email %></td>
+            <td><%= user.edad %></td>
+            <td><%= user.comment %></td>
+            <td><%= user.nombre %></td>
+        </tr>
+    <% end %>
+</table>
